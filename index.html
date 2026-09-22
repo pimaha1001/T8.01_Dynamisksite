@@ -1,20 +1,20 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Forside</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="header">
 
         <div class="logo_wrap">
-            <img src="shared/logo_header.webp" class="logo" alt="logo">
-            <p>Portfolio</p>
+            <img src="images/logo.png" class="logo" alt="logo">
+            <p>For you & me</p>
         </div>
         <button class="burger" aria-label="Åbn menu">
             <span class="line"></span>
@@ -25,52 +25,136 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href="index.html" class="active">Hjem</a></li>
-                <li><a href="productlist.html">Produkter</a></li>
-                <li><a href="basket.html">Indkøbskurv</a></li>
+                <li><a href="index.html" class="active">Frontpage</a></li>
+                <li><a href="productlist.html">Products</a></li>
+                <li><a href="basket.html">Basket</a></li>
             </ul>
         </nav>
 
     </header>
+    <main>
+        <!-- HERO -->
 
-    <body>
-        <article class="card sale">
-            <img />
-            <h3>
-                text
-            </h3>
-            <p>
-                pris
-            </p>
+        <section class="hero">
+            <img src="shared/Forsidebillede.webp" alt="Forsidebillede">
+        </section>
 
-        </article>
-        <article class="card soldout">
-            <img />
-            <div class="soldout_tag">Soldout</div>
-            <h3>
-                text
-            </h3>
-            <p>
-                pris
-            </p>
 
-        </article>
-        <article class="card soldout sale">
-            <img />
-            <div class="soldout_tag">Soldout</div>
-            <h3>
-                text
-            </h3>
-            <p>
-                pris
-            </p>
+        <!-- KORT OM SITE -->
 
-        </article>
+        <section class="kortomsite">
 
-    </body>
+            <div class="grid_1-1">
 
-    </html>
-    /* De enkelte kategorier placeres i et container-element som du fx kan navngive
-    class=”category_list_container”
-    • Det grid de ligger i skal selvfølgelig være responsivt
-    • Alle links herfra skal pege på productlist.html*/
+                <!-- TEKST -->
+
+                <div class="kortomsite-content">
+
+                    <h1>Welcome to Fashion R Us</h1>
+
+                    <h2>We have a wide cataloque of clothes in all styles, sizes and colors.</h2>
+
+                </div>
+
+
+                <!-- Style -->
+
+                <div class="kortomsite-image">
+
+                    <img src="findyourstyle.webp" alt="findyourstyle">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="category-section">
+            <h2>FIND THE NEWEST STYLE HERE</h2>
+            <div class="category-grid">
+
+                <a href="/maend" class="category-card">
+                    <img src="images/maend.png" alt="Mænd">
+                    <span class="category-button">MEN</span>
+                </a>
+
+                <a href="/kvinder" class="category-card">
+                    <img src="images/kvinder.JPG" alt="Kvinder">
+                    <span class="category-button">WOMEN</span>
+                </a>
+
+                <a href="/toej" class="category-card">
+                    <img src="images/toej.jpeg" alt="Tøj">
+                    <span class="category-button">CLOTHES</span>
+                </a>
+
+                <a href="/sko" class="category-card">
+                    <img src="images/sko.jpeg" alt="Sko">
+                    <span class="category-button">SHOES</span>
+                </a>
+
+                <a href="/accessories" class="category-card">
+                    <img src="images/accessories.png" alt="Accessories">
+                    <span class="category-button">ACCESSORIES</span>
+                </a>
+
+                <a href="/boern" class="category-card">
+                    <img src="images/boern1.jpeg" alt="Børn">
+                    <span class="category-button">CHILDREN</span>
+                </a>
+
+                <a href="/beauty" class="category-card">
+                    <img src="images/beauty.jpg" alt="Beauty">
+                    <span class="category-button">BEAUTY</span>
+                </a>
+                <a href="/bolig" class="category-card">
+                    <img src="images/bolig.png" alt="Bolig">
+                    <span class="category-button">HOME</span>
+                </a>
+
+                <a href="/outlet" class="category-card">
+                    <img src="images/outlet.jpg" alt="Outlet">
+                    <span class="category-button">OUTLET</span>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-grid">
+
+            <div>
+                <h4>Kom videre rundt</h4>
+                <ul>
+                    <li><a href="index.html">Forsiden</a></li>
+                    <li><a href="productlist.html">Produkter</a></li>
+                    <li><a href="basket.html">Indkøbskurven</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>FashionRus</h4>
+
+                <div class="social-icons">
+                    <a href="#" target="_blank">
+                        <img src="images/facebook.png" alt="Facebook">
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <img src="images/logo.png" class="logo" alt="Logo">
+            <p>© FashionRus 2026. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

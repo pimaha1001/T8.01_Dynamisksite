@@ -1,3 +1,661 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Anton&family=Chewy&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+  /* Farver */
+  --color-green: #2a5123;
+  --color-beige: #f1dcba;
+  --color-orange: #e97231;
+  --color-light-orange: #ff9e42;
+  --color-yellow: #f8cd7b;
+
+  /* Tekst */
+  --color-text: #2a5123;
+
+  /* Font størrelser */
+  --font-h1-size: 3rem;
+  --font-h2-size: 1.2rem;
+  --font-h3-size: 1rem;
+  --text-size: 1rem;
+
+  /* Fonts */
+  --font-family-h1: "Alegreya", serif;
+  --font-family-h2-h3: "Chewy", system-ui;
+  --font-family-p: "Open Sans", sans-serif;
+  --font-family-btn: "Anton", sans-serif;
+
+  /* Font weight */
+  --font-weight-extrabold: 800;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 300;
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: 2rem;
+  padding: 0 85px;
+  max-width: 100%;
+}
+
+/* ========================================
+   OVERSKRIFTER OG TEKST
+======================================== */
+
+h1 {
+  margin: 20px 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family-h1);
+  font-size: var(--font-h1-size);
+  font-style: italic;
+  font-weight: var(--font-weight-extrabold);
+
+  line-height: 1.3;
+  text-align: center;
+}
+
+h2 {
+  margin: 20px 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family-h2-h3);
+  font-size: var(--font-h2-size);
+  font-weight: var(--font-weight-bold);
+
+  text-transform: uppercase;
+}
+
+h3 {
+  color: var(--color-text);
+
+  font-family: var(--font-family-h2-h3);
+  font-size: var(--font-h3-size);
+
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--color-text);
+
+  font-family: var(--font-family-p);
+  font-size: var(--text-size);
+}
+
+/* ========================================
+   GENEREL BUTTON
+======================================== */
+
+.btn {
+  display: inline-block;
+  padding: 12px 40px;
+
+  background: var(--color-green);
+  color: var(--color-light-orange);
+
+  border: 1px solid var(--color-green);
+
+  font-family: var(--font-family-btn);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--color-light-orange);
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 20px 85px;
+
+  background-color: var(--color-beige);
+  box-shadow: 0 4px 12px rgba(42, 81, 35, 0.25);
+}
+
+.logo_wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 250px;
+}
+
+.header p {
+  margin: 0;
+
+  color: var(--color-green);
+
+  font-family: var(--font-family-h1);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 5px;
+}
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.navbar ul {
+  display: flex;
+  gap: 35px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--color-green);
+
+  font-family: var(--font-family-p);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 1px;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--color-orange);
+}
+
+.navbar a.active {
+  color: var(--color-light-orange);
+}
+
+/* ========================================
+   BURGER MENU
+======================================== */
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 30px;
+  height: 20px;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+
+  background: var(--color-green);
+
+  transition: 0.3s ease;
+}
+
+/* ========================================
+   KORT OM SITE
+======================================== */
+
+.kortomsite {
+  position: relative;
+  padding: 80px 120px;
+  overflow: hidden;
+  background-color: var(--color-yellow);
+}
+
+/* OVERSKRIFT */
+
+.kortomsite h1 {
+  color: var(--color-text);
+  line-height: 1;
+  text-align: center;
+}
+
+/* UNDEROVERSKRIFT */
+
+.kortomsite h2 {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+
+  color: var(--color-orange);
+
+  background-image: url("shared/Vector 40.webp");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 30px;
+}
+
+/* TEKST */
+
+.kortomsite p {
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* KNAP */
+
+.kortomsite .btn {
+  display: block;
+  width: fit-content;
+  margin: 30px auto 0;
+}
+
+/* BILLEDE */
+
+.kortomsite-image img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 800px) {
+  .kortomsite {
+    padding: 50px 30px;
+  }
+
+  .kortomsite .grid_1-1 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    justify-items: center;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .kortomsite-image img {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .kortomsite {
+    padding: 40px 20px;
+  }
+
+  .kortomsite .grid_1-1 {
+    gap: 30px;
+  }
+
+  .kortomsite h1 {
+    font-size: 2.3rem;
+  }
+
+  .kortomsite h2 {
+    text-align: center;
+  }
+
+  .kortomsite-image img {
+    max-width: 100%;
+  }
+}
+/* ========================================
+   KATEGORI GRID - FORSIDE
+======================================== */
+
+.category-section {
+  width: 100%;
+  padding: 32px 0;
+}
+
+/* GRID */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+/* KATEGORI KORT */
+
+.category-card {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  height: 410px;
+
+  overflow: hidden;
+
+  color: #222;
+  text-decoration: none;
+}
+
+/* BILLEDER */
+
+.category-card img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+/* HOVER PÅ BILLEDE */
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+/* HVID KATEGORI KNAP */
+
+.category-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: inline-block;
+
+  padding: 24px 28px;
+
+  background: #fff;
+  color: #222;
+
+  font-family: var(--font-family-p);
+  font-size: 22px;
+  font-weight: var(--font-weight-medium);
+
+  white-space: nowrap;
+  text-align: center;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* HOVER PÅ KATEGORI KNAP */
+
+.category-card:hover .category-button {
+  background: var(--color-green);
+  color: #fff;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  padding: 80px 85px 0;
+
+  background-color: var(--color-green);
+}
+
+.footer .logo {
+  width: 80px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer h4 {
+  margin-bottom: 20px;
+
+  color: var(--color-yellow);
+
+  font-family: var(--font-family-h2-h3);
+  letter-spacing: 2px;
+}
+
+.footer a {
+  color: var(--color-yellow);
+
+  font-family: var(--font-family-p);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--color-orange);
+}
+
+.footer p {
+  color: var(--color-yellow);
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 8px;
+  padding: 25px 0;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+  /* KATEGORI GRID */
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-card {
+    height: 350px;
+  }
+
+  .category-button {
+    font-size: 20px;
+    padding: 20px 25px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBIL / TABLET
+======================================== */
+
+@media (max-width: 800px) {
+  /* GENERELT */
+
+  main {
+    padding: 0 25px;
+  }
+
+  /* HEADER */
+
+  .header {
+    position: relative;
+    padding: 15px 25px;
+  }
+
+  /* NAVIGATION */
+
+  .navbar {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    width: 220px;
+    padding: 20px;
+
+    background-color: var(--color-beige);
+    box-shadow: 0 4px 12px rgba(42, 81, 35, 0.25);
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 20px;
+
+    text-align: right;
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    font-size: 18px;
+  }
+
+  /* BURGER MENU */
+
+  .burger {
+    display: flex;
+  }
+
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* FOOTER */
+
+  .footer {
+    padding: 50px 25px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    gap: 20px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MOBIL
+======================================== */
+
+@media (max-width: 600px) {
+  /* GENERELT */
+
+  main {
+    padding: 0 15px;
+  }
+
+  /* KATEGORI SEKTION */
+
+  .category-section {
+    padding: 20px 0;
+  }
+
+  /* KATEGORI GRID */
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* KATEGORI KORT */
+
+  .category-card {
+    height: 380px;
+  }
+
+  /* KATEGORI KNAP */
+
+  .category-button {
+    bottom: 25px;
+
+    padding: 18px 24px;
+
+    font-size: 18px;
+  }
+
+  /* FOOTER */
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .card {
 }
 .soldout.soldout_tag {
