@@ -1,1 +1,76 @@
-html
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex">
+    <title>Forside</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="layout.css" />
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="logo_wrap">
+            <img src="shared/logo_header.webp" class="logo" alt="logo">
+            <p>Portfolio</p>
+        </div>
+        <button class="burger" aria-label="Åbn menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Hjem</a></li>
+                <li><a href="productlist.html">Produkter</a></li>
+                <li><a href="basket.html">Indkøbskurv</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <body>
+        <article class="card sale">
+            <img />
+            <h3>
+                text
+            </h3>
+            <p>
+                pris
+            </p>
+
+        </article>
+        <article class="card soldout">
+            <img />
+            <div class="soldout_tag">Soldout</div>
+            <h3>
+                text
+            </h3>
+            <p>
+                pris
+            </p>
+
+        </article>
+        <article class="card soldout sale">
+            <img />
+            <div class="soldout_tag">Soldout</div>
+            <h3>
+                text
+            </h3>
+            <p>
+                pris
+            </p>
+
+        </article>
+
+    </body>
+
+    </html>
+    /* De enkelte kategorier placeres i et container-element som du fx kan navngive
+    class=”category_list_container”
+    • Det grid de ligger i skal selvfølgelig være responsivt
+    • Alle links herfra skal pege på productlist.html*/
