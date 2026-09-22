@@ -4,11 +4,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="robots" content="noindex">
+    <title>Product</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header class="header">
 
+        <div class="logo_wrap">
+            <img src="images/logo.png" class="logo" alt="logo">
+            <p>Your style</p>
+        </div>
+        <button class="burger" aria-label="Åbn menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Frontpage</a></li>
+                <li><a href="productlist.html">Products</a></li>
+                <li><a href="basket.html">Basket</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main class="product-page">
+
+        <!-- BACK TO PRODUCTS -->
+
+        <a href="productlist.html" class="back-link">
+            ← Back to products
+        </a>
+
+
+        <!-- PRODUCT LAYOUT -->
+
+        <section class="product-detail">
+
+            <!-- PRODUCT IMAGE -->
+
+            <div class="product-detail-image">
+
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
+                    alt="Sahara Team India Fanwear Round Neck Jersey" />
+
+            </div>
+
+
+            <!-- PRODUCT INFORMATION -->
+
+            <div class="product-information">
+
+                <h1>Product Information</h1>
+
+                <div class="product-specifications">
+
+                    <h2>Model name</h2>
+
+                    <p>
+                        Sahara Team India Fanwear Round Neck Jersey
+                    </p>
+
+
+                    <h2>Color</h2>
+
+                    <p>Blue</p>
+
+
+                    <h2>Inventory number</h2>
+
+                    <p>1163</p>
+
+                </div>
+
+
+                <!-- BRAND INFORMATION -->
+
+                <div class="brand-information">
+
+                    <h2>Nike</h2>
+
+                    <p>
+                        Nike, creating experiences for today's athlete.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUY BOX -->
+
+            <aside class="product-buy-box">
+
+                <h2>
+                    Sahara Team India Fanwear Round Neck Jersey
+                </h2>
+
+                <p class="product-category">
+                    Nike | T-shirts
+                </p>
+
+                <p class="product-detail-price">
+                    895 kr.
+                </p>
+
+
+                <!-- SIZE SELECTOR -->
+
+                <div class="size-selector">
+
+                    <label for="size">
+                        Choose a size
+                    </label>
+
+                    <select id="size" name="size" required>
+
+                        <option value="" selected disabled>
+                            Select size
+                        </option>
+
+                        <option value="S">S</option>
+
+                        <option value="M">M</option>
+
+                        <option value="L">L</option>
+
+                        <option value="XL">XL</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button type="button" class="btn add-to-basket">
+                    Add to basket
+                </button>
+
+            </aside>
+
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-grid">
+
+            <div>
+                <h4>Finding your way</h4>
+                <ul>
+                    <li><a href="index.html">Frontpage</a></li>
+                    <li><a href="productlist.html">Productlist</a></li>
+                    <li><a href="basket.html">Basket</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>FashionRus</h4>
+
+                <div class="social-icons">
+                    <a href="#" target="_blank">
+                        <img src="images/face_logo.png" alt="Facebook">
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <img src="images/insta_logo.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <img src="images/logo_beige.png" class="logo" alt="Logo">
+            <p>© FashionRus 2026. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 
 </body>
 

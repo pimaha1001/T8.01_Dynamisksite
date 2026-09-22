@@ -4,57 +4,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="robots" content="noindex">
+    <title>Produktlist</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <article class="card sale">
-        <img />
-        <h3>
-            text
-        </h3>
-        <p>
-            pris
-        </p>
+    <header class="header">
 
-    </article>
-    <article class="card soldout">
-        <img />
-        <div class="soldout_tag">Soldout</div>
-        <h3>
-            text
-        </h3>
-        <p>
-            pris
-        </p>
+        <div class="logo_wrap">
+            <img src="images/logo.png" class="logo" alt="logo">
+            <p>Your style</p>
+        </div>
+        <button class="burger" aria-label="Åbn menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
 
-    </article>
-    <article class="card soldout sale">
-        <img />
-        <div class="soldout_tag">Soldout</div>
-        <h3>
-            text
-        </h3>
-        <p>
-            pris
-        </p>
 
-    </article>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="active">Frontpage</a></li>
+                <li><a href="productlist.html">Products</a></li>
+                <li><a href="basket.html">Basket</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <main class="productlist-page">
+
+        <!-- HEADING -->
+
+        <section class="productlist-header">
+
+            <h1>Products</h1>
+
+            <p>
+                Check out our selection of clothing, shoes and accessories.
+            </p>
+
+        </section>
+
+
+        <!-- PRODUCT LIST -->
+        <section class="men_product_list">
+            <h2>Mens clothing</h2>
+            <section class="product_list_container">
+
+                <!-- PRODUCT 1 -->
+
+                <article class="product">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
+                        alt="Sahara Team India Fanwear Round Neck Jersey">
+
+                    <h3>
+                        Sahara Team India Fanwear Round Neck Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+                        <p>895 kr.</p>
+                    </div>
+
+                    <a href="product.html?id=1163" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+
+                </article>
+
+
+                <!-- PRODUCT 2 - DISCOUNT AND SOLD OUT -->
+
+                <article class="product discount soldout">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="Blue T20 Indian Cricket Jersey">
+
+                    <h3>
+                        Blue T20 Indian Cricket Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+
+                        <p>1148 kr.</p>
+
+                        <p class="old-price">
+                            1595 kr. - 28%
+                        </p>
+
+                    </div>
+
+                    <a href="product.html?id=1164" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+                    <p class="discount_tag">-28%</p>
+
+                </article>
+
+
+                <!-- PRODUCT 3 - DISCOUNT -->
+
+                <article class="product discount">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="Mean Team India Cricket Jersey">
+
+                    <h3>
+                        Mean Team India Cricket Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+
+                        <p>1372 kr.</p>
+
+                        <p class="old-price">
+                            2495 kr. - 45%
+                        </p>
+
+                    </div>
+
+                    <a href="product.html?id=1165" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="discount_tag">-45%</p>
+
+                </article>
+
+
+                <!-- PRODUCT 4 - SOLD OUT -->
+
+                <article class="product soldout">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1662.webp" alt="Blue Indrunner Jacket">
+
+                    <h3>
+                        Blue Indrunner Jacket
+                    </h3>
+
+                    <p>Nike - Jackets</p>
+
+                    <div class="product-price">
+                        <p>3495 kr.</p>
+                    </div>
+
+                    <a href="product.html?id=1662" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+
+                </article>
+
+            </section>
+        </section>
+
+        <section class="women_product_list">
+            <h2>Womens clothing</h2>
+            <section class="product_list_container">
+
+                <!-- PRODUCT 1 -->
+
+                <article class="product">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
+                        alt="Sahara Team India Fanwear Round Neck Jersey">
+
+                    <h3>
+                        Sahara Team India Fanwear Round Neck Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+                        <p>895 kr.</p>
+                    </div>
+
+                    <a href="product.html?id=1163" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+
+                </article>
+
+
+                <!-- PRODUCT 2 - DISCOUNT AND SOLD OUT -->
+
+                <article class="product discount soldout">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="Blue T20 Indian Cricket Jersey">
+
+                    <h3>
+                        Blue T20 Indian Cricket Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+
+                        <p>1148 kr.</p>
+
+                        <p class="old-price">
+                            1595 kr. - 28%
+                        </p>
+
+                    </div>
+
+                    <a href="product.html?id=1164" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+                    <p class="discount_tag">-28%</p>
+
+                </article>
+
+
+                <!-- PRODUCT 3 - DISCOUNT -->
+
+                <article class="product discount">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="Mean Team India Cricket Jersey">
+
+                    <h3>
+                        Mean Team India Cricket Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+
+                        <p>1372 kr.</p>
+
+                        <p class="old-price">
+                            2495 kr. - 45%
+                        </p>
+
+                    </div>
+
+                    <a href="product.html?id=1165" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="discount_tag">-45%</p>
+
+                </article>
+
+
+                <!-- PRODUCT 4 - SOLD OUT -->
+
+                <article class="product soldout">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1662.webp" alt="Blue Indrunner Jacket">
+
+                    <h3>
+                        Blue Indrunner Jacket
+                    </h3>
+
+                    <p>Nike - Jackets</p>
+
+                    <div class="product-price">
+                        <p>3495 kr.</p>
+                    </div>
+
+                    <a href="product.html?id=1662" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+
+                </article>
+
+            </section>
+        </section>
+        <section class="clothes_product_list">
+            <h2>Clothing for all</h2>
+            <section class="product_list_container">
+
+                <!-- PRODUCT 1 -->
+
+                <article class="product">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
+                        alt="Sahara Team India Fanwear Round Neck Jersey">
+
+                    <h3>
+                        Sahara Team India Fanwear Round Neck Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+                        <p>895 kr.</p>
+                    </div>
+
+                    <a href="product.html?id=1163" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+
+                </article>
+
+
+                <!-- PRODUCT 2 - DISCOUNT AND SOLD OUT -->
+
+                <article class="product discount soldout">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="Blue T20 Indian Cricket Jersey">
+
+                    <h3>
+                        Blue T20 Indian Cricket Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+
+                        <p>1148 kr.</p>
+
+                        <p class="old-price">
+                            1595 kr. - 28%
+                        </p>
+
+                    </div>
+
+                    <a href="product.html?id=1164" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+                    <p class="discount_tag">-28%</p>
+
+                </article>
+
+
+                <!-- PRODUCT 3 - DISCOUNT -->
+
+                <article class="product discount">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="Mean Team India Cricket Jersey">
+
+                    <h3>
+                        Mean Team India Cricket Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+
+                        <p>1372 kr.</p>
+
+                        <p class="old-price">
+                            2495 kr. - 45%
+                        </p>
+
+                    </div>
+
+                    <a href="product.html?id=1165" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="discount_tag">-45%</p>
+
+                </article>
+
+
+                <!-- PRODUCT 4 - SOLD OUT -->
+
+                <article class="product soldout">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1662.webp" alt="Blue Indrunner Jacket">
+
+                    <h3>
+                        Blue Indrunner Jacket
+                    </h3>
+
+                    <p>Nike - Jackets</p>
+
+                    <div class="product-price">
+                        <p>3495 kr.</p>
+                    </div>
+
+                    <a href="product.html?id=1662" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+
+                </article>
+
+            </section>
+        </section>
+        <section class="shoes">
+            <h2>Shoe selection</h2>
+            <section class="product_list_container">
+
+                <!-- PRODUCT 1 -->
+
+                <article class="product">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
+                        alt="Sahara Team India Fanwear Round Neck Jersey">
+
+                    <h3>
+                        Sahara Team India Fanwear Round Neck Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+                        <p>895 kr.</p>
+                    </div>
+
+                    <a href="product.html?id=1163" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+
+                </article>
+
+
+                <!-- PRODUCT 2 - DISCOUNT AND SOLD OUT -->
+
+                <article class="product discount soldout">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp" alt="Blue T20 Indian Cricket Jersey">
+
+                    <h3>
+                        Blue T20 Indian Cricket Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+
+                        <p>1148 kr.</p>
+
+                        <p class="old-price">
+                            1595 kr. - 28%
+                        </p>
+
+                    </div>
+
+                    <a href="product.html?id=1164" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+                    <p class="discount_tag">-28%</p>
+
+                </article>
+
+
+                <!-- PRODUCT 3 - DISCOUNT -->
+
+                <article class="product discount">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1165.webp" alt="Mean Team India Cricket Jersey">
+
+                    <h3>
+                        Mean Team India Cricket Jersey
+                    </h3>
+
+                    <p>Nike - T-shirts</p>
+
+                    <div class="product-price">
+
+                        <p>1372 kr.</p>
+
+                        <p class="old-price">
+                            2495 kr. - 45%
+                        </p>
+
+                    </div>
+
+                    <a href="product.html?id=1165" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="discount_tag">-45%</p>
+
+                </article>
+
+
+                <!-- PRODUCT 4 - SOLD OUT -->
+
+                <article class="product soldout">
+
+                    <img src="https://kea-alt-del.dk/t7/images/webp/640/1662.webp" alt="Blue Indrunner Jacket">
+
+                    <h3>
+                        Blue Indrunner Jacket
+                    </h3>
+
+                    <p>Nike - Jackets</p>
+
+                    <div class="product-price">
+                        <p>3495 kr.</p>
+                    </div>
+
+                    <a href="product.html?id=1662" class="btn">
+                        View Product
+                    </a>
+
+                    <p class="soldout_tag">Sold Out</p>
+
+                </article>
+
+            </section>
+        </section>
+
+
+    </main>
+    <footer class="footer">
+        <div class="footer-grid">
+
+            <div>
+                <h4>Finding your way</h4>
+                <ul>
+                    <li><a href="index.html">Frontpage</a></li>
+                    <li><a href="productlist.html">Productlist</a></li>
+                    <li><a href="basket.html">Basket</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>FashionRus</h4>
+
+                <div class="social-icons">
+                    <a href="#" target="_blank">
+                        <img src="images/face_logo.png" alt="Facebook">
+                    </a>
+
+                    <a href="#" target="_blank">
+                        <img src="images/insta_logo.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <img src="images/logo_beige.png" class="logo" alt="Logo">
+            <p>© FashionRus 2026. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-/*Denne side skal vise en liste over produkter. Prøv at være konsekvent. Opret layoutet af et enkelt
-"kort", kopier det og skift dataene. Stop, når du har 4 produkter, og kopier alt et par gange, så du
-ved, hvordan dit websted opfører sig med masser af produkter.
-• Produkt-kortene placeres i et container-element fx med klassen “product_list_container”
-• Hvert produkt-kort skal linke til product.htm*/
-/*Husk at tage højde for (og præsentere visuelt), at produkterne kan
-• være udsolgt
-• have en rabatpris*/
