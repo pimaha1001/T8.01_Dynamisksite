@@ -13,7 +13,7 @@ let url;
 
 // Hvis der er en kategori i URL'en
 if (category) {
-  url = `${productURL}?category=${encodeURIComponent(category)}`;
+  url = `${productURL}&category=${encodeURIComponent(category)}`;
   categoryTitle.textContent = category;
 } else {
   // Hvis der IKKE er en kategori, hent alle produkter
@@ -36,7 +36,9 @@ function showProducts(products) {
 
   products.forEach((product) => {
     listContainer.innerHTML += `
-      <article class="product ${product.soldout ? "soldout" : ""}">
+      <article class="product 
+        ${product.soldout ? "soldout" : ""}
+        ${product.discount ? "discount" : ""}">
 
         <img 
           src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
@@ -48,16 +50,29 @@ function showProducts(products) {
         <p>${product.brandname} - ${product.category}</p>
 
         <div class="product-price">
-          <p>${product.price} kr.</p>
+
+          ${
+            product.discount
+              ? `<p>${getDiscountPrice(product.price, product.discount)} kr.</p>
+                 <p class="old-price">${product.price} kr.</p>`
+              : `<p>${product.price} kr.</p>`
+          }
+
         </div>
 
         <a href="product.html?id=${product.id}" class="btn">
           View Product
         </a>
 
+        ${product.discount ? `<p class="discount_tag">SALE -${product.discount}%</p>` : ""}
+
         ${product.soldout ? `<p class="soldout_tag">Sold Out</p>` : ""}
 
       </article>
     `;
   });
+}
+
+function getDiscountPrice(originalPrice, discount) {
+  return Math.round((originalPrice * (100 - discount)) / 100);
 }

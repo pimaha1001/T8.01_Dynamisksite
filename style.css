@@ -477,6 +477,39 @@ p {
   text-decoration: line-through;
 }
 
+.product-detail-image {
+  position: relative;
+}
+
+.detail-sale-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-orange);
+  color: var(--color-beige);
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+.detail-sale-tag:empty {
+  display: none;
+}
+.detail-soldout-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+  background-color: var(--color-green);
+  color: var(--color-beige);
+  font-family: var(--font-family-btn);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.detail-soldout-tag:empty {
+  display: none;
+}
+
 /* ========================================
    PRODUCT BUTTON
 ======================================== */
@@ -1026,11 +1059,27 @@ p {
   font-size: 0.9rem;
 }
 
-.product-buy-box .product-detail-price {
+.product-buy-box .product-detail-price p {
   color: var(--color-light-orange);
   font-family: var(--font-family-p);
   font-size: 1.5rem;
   font-weight: 700;
+}
+.product-detail-price {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-buy-box .detail-original-price {
+  color: var(--color-beige);
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.detail-original-price:empty {
+  display: none;
 }
 
 /* ========================================
