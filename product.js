@@ -7,6 +7,15 @@ const detailURL = `https://kea-alt-del.dk/t7/api/products/${selectedID}`;
 
 console.log("detailURL", detailURL);
 
+const backLink = document.querySelector(".back-link");
+
+backLink.addEventListener("click", (event) => {
+  if (document.referrer && new URL(document.referrer).origin === window.location.origin) {
+    event.preventDefault();
+    window.history.back();
+  }
+});
+
 function loadData(url) {
   fetch(url).then((response) => {
     response.json().then((data) => {
