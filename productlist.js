@@ -4,48 +4,89 @@ const productURL = "https://kea-alt-del.dk/t7/api/products?limit=100";
 
 const listContainer = document.querySelector(".product_list_container");
 const categoryTitle = document.querySelector("#category-title");
-const filterButtons = document.querySelectorAll(".btn_container button");
+const genderButtons = document.querySelectorAll(".btn_container button[data-filter]");
+const seasonButtons = document.querySelectorAll(".btn_container button[data-season]");
+const sortButton = document.querySelector(".sort_button");
 
-// Hent category fra URL'en
+// Hent filtre fra sidens URL
 const params = new URLSearchParams(window.location.search);
 const category = params.get("category");
 
-// Gem alle produkterne fra API'et her, så de kan filtreres
 let allData = [];
+let selectedGender = params.get("gender") || "All";
+let selectedSeason = params.get("season") || "All";
+let sortByPriceAscending = false;
 
-// Vis alle køn som standard
-let selectedGender = "All";
+// Byg API-URL'en med de valgte filtre
+function createProductURL() {
+  const url = new URL(productURL);
 
-// Hvis der er en kategori i URL'en, hentes kun den kategori
-let url;
+  if (category) {
+    url.searchParams.set("category", category);
+  }
 
-if (category) {
-  url = `${productURL}&category=${encodeURIComponent(category)}`;
-  categoryTitle.textContent = category;
-} else {
-  // Hvis der ikke er en kategori i URL'en, hentes alle produkter
-  url = productURL;
-  categoryTitle.textContent = "All Products";
+  if (selectedSeason !== "All") {
+    url.searchParams.set("season", selectedSeason);
+  }
+
+  if (selectedGender !== "All") {
+    url.searchParams.set("gender", selectedGender);
+  }
+
+  return url.toString();
 }
 
-// Gør filterknapperne klikbare
-filterButtons.forEach((button) => {
+// Gem de valgte filtre i sidens URL uden at genindlæse siden
+function updatePageURL() {
+  const url = new URL(window.location.href);
+
+  if (selectedGender === "All") {
+    url.searchParams.delete("gender");
+  } else {
+    url.searchParams.set("gender", selectedGender);
+  }
+
+  if (selectedSeason === "All") {
+    url.searchParams.delete("season");
+  } else {
+    url.searchParams.set("season", selectedSeason);
+  }
+
+  window.history.replaceState({}, "", url);
+}
+
+categoryTitle.textContent = category || "All Products";
+
+// Gør kønsfilterknapperne klikbare
+genderButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // Hent filterværdien fra knappens data-filter
     selectedGender = button.dataset.filter;
 
-    // Markér den valgte filterknap som aktiv
-    filterButtons.forEach((filterButton) => {
-      filterButton.classList.toggle("active", filterButton === button);
+    genderButtons.forEach((genderButton) => {
+      genderButton.classList.toggle("active", genderButton === button);
     });
 
-    // Vis produkterne, der passer til det valgte filter
-    filterSelection();
+    updatePageURL();
+    getData(createProductURL());
   });
 });
 
-// Hent produkterne fra API'et
-getData(url);
+// Gør sæsonknapperne klikbare
+seasonButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedSeason = button.dataset.season;
+
+    seasonButtons.forEach((seasonButton) => {
+      seasonButton.classList.toggle("active", seasonButton === button);
+    });
+
+    updatePageURL();
+    getData(createProductURL());
+  });
+});
+
+// Hent produkterne første gang
+getData(createProductURL());
 
 function getData(url) {
   fetch(url)
@@ -57,10 +98,7 @@ function getData(url) {
       return response.json();
     })
     .then((data) => {
-      // Gem API-dataene, så filterfunktionen kan bruge dem
       allData = data;
-
-      // Vis produkterne med det valgte filter
       filterSelection();
     })
     .catch((error) => {
@@ -69,11 +107,29 @@ function getData(url) {
     });
 }
 
+// Filtrér produkterne, og sortér dem hvis sorteringsknappen er brugt
 function filterSelection() {
-  // Vis alle produkter eller filtrér på det valgte køn
-  const filteredProducts = selectedGender === "All" ? allData : allData.filter((product) => product.gender === selectedGender);
+  let filteredProducts = selectedGender === "All" ? [...allData] : allData.filter((product) => product.gender === selectedGender);
+
+  if (sortByPriceAscending) {
+    filteredProducts.sort((a, b) => {
+      const actualPriceA = a.discount ? getDiscountPrice(a.price, a.discount) : a.price;
+
+      const actualPriceB = b.discount ? getDiscountPrice(b.price, b.discount) : b.price;
+
+      return actualPriceA - actualPriceB;
+    });
+  }
 
   showProducts(filteredProducts);
+}
+
+// Sortér efter pris fra høj til lav
+if (sortButton) {
+  sortButton.addEventListener("click", () => {
+    sortByPriceAscending = true;
+    filterSelection();
+  });
 }
 
 function showProducts(products) {
